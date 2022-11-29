@@ -7,7 +7,7 @@ export const authApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_SERVER_URL}/auth`, credentials: "include" }),
   tagTypes: ["Auth"],
   endpoints: (builder) => ({
-    getMe: builder.query<User, string | void>({
+    getMe: builder.query<User, null | void>({
       query: () => "/status",
       providesTags: ["Auth"],
       async onQueryStarted(args, { dispatch, queryFulfilled }) {
@@ -20,7 +20,11 @@ export const authApi = createApi({
         }
       },
     }),
+    logout: builder.mutation<void, void>({
+      query: () => "/logout",
+      invalidatesTags: ["Auth"]
+    })
   }),
 });
 
-export const { useGetMeQuery } = authApi;
+export const { useGetMeQuery, useLogoutMutation } = authApi;

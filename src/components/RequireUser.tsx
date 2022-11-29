@@ -8,7 +8,7 @@ import FullScreenSpinner from "./UI/FullScreenSpinner";
 const RequireUser = () => {
   const [, , removeCookie] = useCookies(["logged_in"]);
   const user = useAppSelector((state) => state.auth.user);
-  const { isLoading, isError } = useGetMeQuery("", { skip: !!user });
+  const { isLoading, isError } = useGetMeQuery(null, { skip: !!user });
 
   if (isError) {
     removeCookie("logged_in");
