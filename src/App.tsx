@@ -1,28 +1,24 @@
-import { useDispatch } from "react-redux";
-import { useGetMeQuery } from "./service/auth";
-import { authActions } from "./store/auth";
-import LoggedOutRouter from "./routers/LoggedOutRouter";
-import LoggedInRouter from "./routers/LoggedInRouter";
+import { Route, Routes } from "react-router-dom";
+import RequireUser from "./components/RequireUser";
+import ChatRoomList from "./pages/ChatRoomList";
+import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
+import Profile from "./pages/Profile";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
-  const dispatch = useDispatch();
-  const { data: userData, isLoading, isSuccess, isError, error } = useGetMeQuery();
-  console.log("user", userData);
-  console.log("error", error);
-
-  if (isSuccess && userData) {
-    dispatch(authActions.setUser(userData));
-  }
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <LoggedOutRouter />;
-  }
-
-  return <LoggedInRouter />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/chatroom" element={<ChatRoomList />} />
+        <Route element={<RequireUser />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;

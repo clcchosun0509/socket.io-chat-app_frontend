@@ -5,8 +5,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ["Roboto", ...defaultTheme.fontFamily.sans]
-      }
+        roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
+        notoSans: ["Noto Sans KR", ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   plugins: [],
