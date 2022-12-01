@@ -17,9 +17,9 @@ export interface Room {
 }
 
 export interface Message {
-  id: number;
+  id: string;
+  isMine: boolean;
+  username: string;
+  avatar: string;
   content: string;
-  createdAt: number;
-  user: User;
-  room: Room;
 }

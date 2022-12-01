@@ -9,7 +9,7 @@ type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElemen
 const RoomItem = ({ room, ...props }: Props) => {
   return (
     <button className="flex flex-row h-20 p-3 font-notoSans w-full items-center" {...props}>
-      <img className="flex h-full rounded-2xl mr-4" alt="room owner avatar" src={room.ownerAvatar} />
+      <img className="flex h-full rounded-2xl mr-4" alt="room owner avatar" src={room.ownerAvatar} referrerPolicy="no-referrer" />
       <div className="flex flex-col flex-auto justify-center items-start">
         <p className="text-lg">{room.title}</p>
         <p className="text-sm font-thin">{room.ownerUsername}</p>
