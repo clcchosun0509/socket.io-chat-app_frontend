@@ -1,15 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Background from "../components/UI/Background";
-import Card from "../components/UI/Card";
+import Background from "../components/ui/Background";
+import Card from "../components/ui/Card";
 import BottomNavBar from "../components/BottomNavBar";
 import TopNavBar from "../components/TopNavBar";
 import { useContext, useEffect, useState } from "react";
 import { SocketContext } from "../context/socket";
 import { useCreateRoomMutation, useGetRoomsQuery } from "../service/room";
 import { Room } from "../service/type";
-import FullScreenSpinner from "../components/UI/FullScreenSpinner";
-import RoomItem from "../components/UI/RoomItem";
+import FullScreenSpinner from "../components/ui/FullScreenSpinner";
+import RoomItem from "../components/ui/RoomItem";
 import { useAppDispatch, useAppSelector } from "../store";
 import { roomActions } from "../store/room";
 

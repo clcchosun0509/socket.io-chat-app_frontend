@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { SocketContext } from "../context/socket";
 import { useGetMeQuery } from "../service/auth";
 import { useAppSelector } from "../store";
-import FullScreenSpinner from "./UI/FullScreenSpinner";
+import FullScreenSpinner from "./ui/FullScreenSpinner";
 
 const RequireUser = () => {
   const [, , removeCookie] = useCookies(["logged_in"]);

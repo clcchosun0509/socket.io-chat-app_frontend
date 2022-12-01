@@ -5,12 +5,12 @@ import { toast } from "react-toastify";
 import { useEffect } from "react";
 import { useCookies } from "react-cookie";
 
-import Background from "../components/UI/Background";
-import Card from "../components/UI/Card";
+import Background from "../components/ui/Background";
+import Card from "../components/ui/Card";
 import BottomNavBar from "../components/BottomNavBar";
 import { User } from "../service/type";
 import TopNavBar from "../components/TopNavBar";
-import ProfileItem from "../components/UI/ProfileItem";
+import ProfileItem from "../components/ui/ProfileItem";
 import { useLogoutMutation } from "../service/auth";
 
 type ContextProps = {

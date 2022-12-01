@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
-import Background from "../components/UI/Background";
-import Card from "../components/UI/Card";
-import GoogleLoginButton from "../components/UI/GoogleLoginButton";
+import Background from "../components/ui/Background";
+import Card from "../components/ui/Card";
+import GoogleLoginButton from "../components/ui/GoogleLoginButton";
 
 const Login = () => {
   const [cookies] = useCookies(["logged_in"]);
