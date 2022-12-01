@@ -18,10 +18,6 @@ const roomSlice = createSlice({
     setRooms(state, action: PayloadAction<Room[]>) {
       state.rooms = action.payload;
     },
-    setCurrentRoomId(state, action: PayloadAction<string | null>) {
-      console.log("setCurrentRoomId", action.payload)
-      state.currentRoomId = action.payload;
-    },
   },
 });
 

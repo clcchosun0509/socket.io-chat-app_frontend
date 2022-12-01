@@ -10,7 +10,7 @@ import { socket, SocketContext } from "./context/socket";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <CookiesProvider>
       <SocketContext.Provider value={socket}>
         <Provider store={store}>
@@ -18,5 +18,5 @@ root.render(
         </Provider>
       </SocketContext.Provider>
     </CookiesProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

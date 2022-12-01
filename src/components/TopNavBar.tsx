@@ -15,8 +15,8 @@ const TopNavBar = ({ text, backButtonRoute, roomInfo }: Props) => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-14 flex flex-row items-center justify-between font-notoSans">
-      <div className="flex flex-row items-center">
+    <div className="w-full h-fit flex flex-row items-center justify-between font-notoSans">
+      <div className="flex h-14 flex-row items-center">
         <FontAwesomeIcon
           className="p-3 text-xl cursor-pointer"
           icon={faArrowLeft}

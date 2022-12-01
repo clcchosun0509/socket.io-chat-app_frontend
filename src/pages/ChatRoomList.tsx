@@ -32,7 +32,6 @@ const ChatRoomList = () => {
   }, [getRoomsData, dispatch]);
 
   useEffect(() => {
-    dispatch(roomActions.setCurrentRoomId(null));
     socket.on("onRoomsUpdate", (rooms: Room[]) => {
       dispatch(roomActions.setRooms(rooms));
     });
