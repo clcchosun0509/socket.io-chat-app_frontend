@@ -32,6 +32,7 @@ const ChatRoomList = () => {
   }, [getRoomsData, dispatch]);
 
   useEffect(() => {
+    dispatch(roomActions.setCurrentRoomId(null));
     socket.on("onRoomsUpdate", (rooms: Room[]) => {
       dispatch(roomActions.setRooms(rooms));
     });
@@ -63,7 +64,13 @@ const ChatRoomList = () => {
     return <FullScreenSpinner />;
   }
 
-  const roomElements = rooms.map((room) => <RoomItem key={`room_el_${room.id}`} room={room} />);
+  const joinRoomHandler = (roomId: string) => {
+    navigate(`/chatroom/${roomId}`);
+  };
+
+  const roomElements = rooms.map((room) => (
+    <RoomItem key={`room_el_${room.id}`} room={room} onClick={() => joinRoomHandler(room.id)} />
+  ));
 
   return (
     <Background>

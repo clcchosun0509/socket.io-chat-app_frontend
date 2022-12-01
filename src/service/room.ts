@@ -4,11 +4,15 @@ import { Room } from "./type";
 export const roomApi = createApi({
   reducerPath: "roomApi",
   baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_APP_SERVER_URL}/room`, credentials: "include" }),
-  tagTypes: ["Room"],
+  tagTypes: ["Rooms", "Room"],
   endpoints: (builder) => ({
+    getRoom: builder.query<Room, string>({
+      query: (id) => `/${id}`,
+      providesTags: ["Room"],
+    }),
     getRooms: builder.query<Room[], null | void>({
       query: () => "/",
-      providesTags: ["Room"],
+      providesTags: ["Rooms"],
     }),
     createRoom: builder.mutation<Room, string>({
       query: (title) => ({
@@ -16,9 +20,9 @@ export const roomApi = createApi({
         method: "POST",
         body: { title },
       }),
-      invalidatesTags: ["Room"],
+      invalidatesTags: ["Rooms"],
     }),
   }),
 });
 
-export const { useGetRoomsQuery, useCreateRoomMutation } = roomApi;
+export const { useGetRoomQuery, useGetRoomsQuery, useCreateRoomMutation } = roomApi;

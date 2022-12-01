@@ -7,10 +7,11 @@ export interface User {
 }
 
 export interface Room {
-  id: number;
+  id: string;
   title: string;
-  users: User[];
-  owner: User;
+  numOfUsers: number;
+  ownerUsername: string;
+  ownerAvatar: string;
   messages: Message[];
   updatedAt: Date;
 }

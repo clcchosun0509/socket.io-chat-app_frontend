@@ -3,10 +3,12 @@ import { Room } from "../service/type";
 
 interface RoomInitialState {
   rooms: Room[];
+  currentRoomId: string | null;
 }
 
 const initialState: RoomInitialState = {
   rooms: [],
+  currentRoomId: null,
 };
 
 const roomSlice = createSlice({
@@ -15,6 +17,10 @@ const roomSlice = createSlice({
   reducers: {
     setRooms(state, action: PayloadAction<Room[]>) {
       state.rooms = action.payload;
+    },
+    setCurrentRoomId(state, action: PayloadAction<string | null>) {
+      console.log("setCurrentRoomId", action.payload)
+      state.currentRoomId = action.payload;
     },
   },
 });
