@@ -6,7 +6,7 @@ import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
@@ -15,7 +15,9 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/chatroom" element={<ChatRoomList />} />
+          <Route element={<RequireUser />}>
+            <Route path="/chatrooms" element={<ChatRoomList />} />
+          </Route>
           <Route element={<RequireUser />}>
             <Route path="/profile" element={<Profile />} />
           </Route>

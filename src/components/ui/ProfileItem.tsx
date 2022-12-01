@@ -2,7 +2,7 @@ interface Props {
   title: string;
   content: string;
 }
-const ListItem = ({ title, content }: Props) => {
+const ProfileItem = ({ title, content }: Props) => {
   return (
     <div className="flex flex-col p-3 py-4">
       <p className="pb-1 font-notoSans font-light">{title}</p>
@@ -11,4 +11,4 @@ const ListItem = ({ title, content }: Props) => {
   );
 };
 
-export default ListItem;
+export default ProfileItem;

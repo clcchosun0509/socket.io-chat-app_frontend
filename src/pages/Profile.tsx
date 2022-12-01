@@ -10,7 +10,7 @@ import Card from "../components/UI/Card";
 import BottomNavBar from "../components/BottomNavBar";
 import { User } from "../service/type";
 import TopNavBar from "../components/TopNavBar";
-import ListItem from "../components/UI/ListItem";
+import ProfileItem from "../components/UI/ProfileItem";
 import { useLogoutMutation } from "../service/auth";
 
 type ContextProps = {
@@ -51,9 +51,9 @@ const Profile = () => {
         <TopNavBar text="프로필" />
         <div className="h-full flex flex-col justify-between">
           <div>
-            <ListItem title="닉네임" content={user.username} />
-            <ListItem title="이메일" content={user.email} />
-            <ListItem title="아이디" content={user.id} />
+            <ProfileItem title="닉네임" content={user.username} />
+            <ProfileItem title="이메일" content={user.email} />
+            <ProfileItem title="아이디" content={user.id} />
           </div>
           <button
             className="m-3 h-16 bg-sky-400 rounded-md flex flex-row justify-center items-center"
@@ -63,7 +63,7 @@ const Profile = () => {
             <p className="text-white text-xl font-notoSans">로그아웃</p>
           </button>
         </div>
-        <BottomNavBar active="profile" onClickChat={() => navigate("/chatroom")} />
+        <BottomNavBar active="profile" onClickChat={() => navigate("/chatrooms")} />
       </Card>
     </Background>
   );

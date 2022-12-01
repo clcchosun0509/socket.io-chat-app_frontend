@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+
 import Background from "../components/UI/Background";
 import Card from "../components/UI/Card";
 import GoogleLoginButton from "../components/UI/GoogleLoginButton";
@@ -9,9 +10,10 @@ const Login = () => {
   const [cookies] = useCookies(["logged_in"]);
   const navigate = useNavigate();
   
+
   useEffect(() => {
     if (cookies.logged_in) {
-      navigate("/chatroom");
+      navigate("/chatrooms");
     }
   }, [cookies.logged_in, navigate]);
 
