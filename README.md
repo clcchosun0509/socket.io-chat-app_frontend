@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# Socket.io + react + RTK Query + OAuth2.0 을 사용한 프론트엔드
+백엔드 : [백엔드 코드로 이동](https://github.com/clcchosun0509/socket.io-chat-app_backend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[create-react-app](https://www.npmjs.com/package/create-react-app)을 기반으로한 프론트엔드 코드입니다.
 
-## Available Scripts
+백엔드 서버와의 통신은 RTK Query와 Socket.io를 이용합니다.
 
-In the project directory, you can run:
+현재는 구글 OAuth만을 지원하지만 추후에 다른 회사의 OAuth도 추가할 생각입니다.
 
-### `npm start`
+## 현재 구현된 기능
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 구글 OAuth로 회원가입/로그인
+- 채팅방 생성
+- 채팅방 접속자 수 확인
+- 여러명과 채팅
+- 내 프로필 확인
+- 로그아웃
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 예제 이미지
+<p align="center" class="img-box">
+<img src="docs/chat-app-example1.png" alt="chat app example" width=400 />
+<img src="docs/chat-app-example2.png" alt="chat app example" width=400 />
+</p>
+&nbsp;
+<p align="center">
+<img src="docs/chat-app-example3.png" alt="chat app example" width=400 />
+<img src="docs/chat-app-example4.png" alt="chat app example" width=400 />
+</p>
+&nbsp;
+<p align="center">
+<img src="docs/chat-app-example5.png" alt="chat app example" width=400 />
+<img src="docs/chat-app-example6.png" alt="chat app example" width=400 />
+</p>
+&nbsp;
+<p align="center">
+<img src="docs/chat-app-example7.png" alt="chat app example" width=400 />
+</p>
